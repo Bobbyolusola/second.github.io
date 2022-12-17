@@ -10,6 +10,12 @@ import {PublicRouteHOC} from "./common/routeHOC/PublicRoute";
 import NoPerm from "./Pages/NoPermission/NoPermission";
 import {AdminRouteHOC} from "./common/routeHOC/AdminRoute";
 import CustomRoute from "./Component/customRoute/CustomRoute";
+import HOCComponentWithState, {HOC} from "./Pages/HOC Page/Hoc_view_HOC";
+import HOCview from "./Pages/HOC Page/Hoc_view";
+import FORM from "./Pages/FORM/FORM";
+import Form2 from "./Pages/Form2/Form2";
+import HoverIncrease from "./components2/HoverIncrease";
+import ClickIncrease from "./components2/ClickIncrease";
 
 function App() {
 
@@ -21,6 +27,12 @@ function App() {
         <Routes>
                 <Route path ={AppRoutes.home} element = {<Main/>}/>
                 <Route path ={AppRoutes.NoPerm}  element = {<NoPerm/>}/>
+                {/*<Route path ={AppRoutes.HOC}  element = {<HOCComponentWithState Component={HOCview}/>}/>*/}
+                <Route path ={AppRoutes.HOC}  element = {HOC()}/>
+                <Route path ={AppRoutes.FORM}  element = {<FORM/>}/>
+                <Route path ={AppRoutes.Form2}  element = {<Form2/>}/>
+                <Route path ={AppRoutes.clickInc}  element = {<ClickIncrease/>}/>
+                <Route path ={AppRoutes.hoverInc}  element = {<HoverIncrease/>}/>
 
                 <Route path ={NestedRoutes.bobby} element = {<PublicRouteHOC Component ={Bobby}/>}/> //user
 
